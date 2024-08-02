@@ -1,0 +1,46 @@
+#header{
+   background-image: linear-gradient(rgb(227, 173, 91),rgb(209, 197, 198));
+    display:flex;
+    height: 55px;
+    justify-content: space-between;
+    
+}
+#loginbutton{
+    height: 35px;
+    padding: 5px;
+    width: 100px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-weight: bolder;
+    font-style: normal;
+    font-size: larger;
+    background-Image: linear-gradient(rgb(191, 144, 151), rgb(191, 176, 178));
+    border-radius: 8px;
+    border: transparent;
+    cursor: pointer;
+    
+}
+#searchbar{
+    margin-top:10px; 
+    margin-left: 150px;
+}
+#searchbar input {
+    height: 30px;
+    width: 250px;
+    border-radius: 10px;
+    border: transparent;
+    
+}
+#searchbutton{
+    position: relative;
+    right: 30px;
+    border-radius: 10px;
+    border: transparent;
+}
+#logoicon{
+    margin-top:10px; 
+    margin-left: 10px;
+    font-size:x-large;
+    cursor: pointer;
+    color: blanchedalmond;
+}
