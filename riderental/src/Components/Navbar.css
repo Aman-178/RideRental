@@ -31,16 +31,19 @@
     border: transparent;
     
 }
-#searchbutton{
+#search-button{
     position: relative;
     right: 30px;
     border-radius: 10px;
     border: transparent;
 }
-#logoicon{
-    margin-top:10px; 
-    margin-left: 10px;
-    font-size:x-large;
+#logo-icon button{
     cursor: pointer;
-    color: blanchedalmond;
+    font-size: xx-large;  
+    border: transparent;
+    margin-top: 10px;
+    margin-left: 10px;
+    background-color:transparent;
+   
+    
 }

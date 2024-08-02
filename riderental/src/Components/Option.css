@@ -1,0 +1,20 @@
+
+#option{
+    margin-top: 9px;
+    background-color: aliceblue;
+    border-right:1px solid aliceblue;
+    box-shadow: 2px 2px 5px rgb(86, 134, 134);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size:medium;
+    list-style-type: none;
+    max-height:max-content;
+    min-width: 190px;
+    
+}
+#optionList li{
+    list-style: none;
+    position: relative;
+    right: 35px;
+}

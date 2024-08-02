@@ -5,8 +5,9 @@ import { Navbar } from './Components/Navbar';
 
 function App() {
   return (
-    <div  id="RideRental">
-     
+    <div id="RideRental">
+
+
       <Navbar></Navbar>
     </div>
   );
