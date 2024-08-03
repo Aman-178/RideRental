@@ -35,6 +35,18 @@ export const Signup = () => {
             setMessage("Passwords don't match");
             return;
         }
+        if(formData.password.length<6){
+            setMessage("password should be six character");
+            return;
+        }
+    const hasLetter = /[a-zA-Z]/.test(formData.password);
+    const hasNumber = /[0-9]/.test(formData.password);
+    const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(formData.password);
+
+    if (!hasLetter || !hasNumber || !hasSymbol) {
+        setMessage("Password must include at least one letter, one number, and one special character");
+        return;
+    }
         setMessage('');
 
         const formDataToSend = new FormData();

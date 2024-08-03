@@ -46,7 +46,7 @@ export const Login = () => {
                         />
                     </div>
                     <div className='form-group'>
-                        <button type='submit'>Login</button>
+                        <button className='login-button' type='submit'>Login</button>
                     </div>
                     <div className='forgot-password'>
                         <button type='button'>Forgot Password?</button>
