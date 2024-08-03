@@ -20,22 +20,12 @@
     cursor: pointer;
     
 }
-#searchbar{
-    margin-top:10px; 
-    margin-left: 150px;
-}
-#searchbar input {
-    height: 30px;
-    width: 250px;
-    border-radius: 10px;
-    border: transparent;
-    
-}
-#search-button{
+#name{
     position: relative;
-    right: 30px;
-    border-radius: 10px;
-    border: transparent;
+    bottom: 10px;
+    margin-left: 150px;
+    color: lightgoldenrodyellow;
+
 }
 #logo-icon button{
     cursor: pointer;

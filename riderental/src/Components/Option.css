@@ -1,9 +1,9 @@
 
 #option{
     margin-top: 9px;
-    background-color: aliceblue;
-    border-right:1px solid aliceblue;
-    box-shadow: 2px 2px 5px rgb(86, 134, 134);
+    background-color: rgb(177, 203, 227);
+    border-right:3px solid rgb(108, 164, 212);
+    
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -17,4 +17,8 @@
     list-style: none;
     position: relative;
     right: 35px;
+}
+#optionList button{
+    background-color: transparent;
+    font-size: medium;
 }
