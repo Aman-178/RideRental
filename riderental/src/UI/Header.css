@@ -1,0 +1,38 @@
+.usernav{
+    display: flex;
+    height: 100px;
+    justify-content:space-between;
+    align-items: center;
+    
+}
+.userlogo{
+  margin-left: 10px;
+  color: bisque;
+
+}
+.usersearchbar{
+    display: flex;
+}
+.usersearchbar input{
+    width:250px;
+    height: 35px;
+    border-radius: 20px;
+    position: relative;
+    right: 50px;
+    color: transparent;
+    border: none;
+    color: black;
+}
+.usersearchicon{
+    position: relative;
+    right: 77px;
+    top: 2px;
+    border-radius: 20px;
+    font-size: x-large;
+   color: rgb(162, 175, 186);
+}
+.userprofileicon{
+    font-size: xx-large;
+    color: aliceblue;
+    margin-right: 30px;
+}

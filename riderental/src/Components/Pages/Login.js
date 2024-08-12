@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import './Login.css'; // Import the CSS file
+import axios from 'axios';
 
 export const Login = () => {
     const [formData, setFormData] = useState({
         email: '',
-        password: ''
+        confirmpassword: ''
     });
 
     const handleChange = (e) => {
@@ -12,10 +13,18 @@ export const Login = () => {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
         // Handle form submission logic
-        console.log('Form submitted:', formData);
+        try {
+            const response=await axios.post('http://localhost:9093/supplier/supplierverifydata',formData);
+            if(response.status===200){
+               console.log("aman");
+            }
+        } catch (error) {
+            console.log(error);
+        }
+        
     };
 
     return (
@@ -39,8 +48,8 @@ export const Login = () => {
                         <input
                           type='password'
                           id='password'
-                          name='password'
-                          value={formData.password}
+                          name='confirmpassword'
+                          value={formData.confirmpassword}
                           onChange={handleChange}
                           required
                         />

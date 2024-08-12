@@ -1,0 +1,21 @@
+.containerhome{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   overflow-x: hidden;
+   background-image: linear-gradient(rgb(233, 219, 219),rgb(161, 154, 154));
+   height: 100vh;
+}
+.userheader{
+   
+    width: 100%;
+    background-color: rgb(41, 26, 23);
+    position: relative;
+    bottom: 18px;
+}
+.userfooter{
+    width: 100%;
+    background-color: rgb(41, 26, 23);
+    position: absolute;
+    bottom: 0;
+}
