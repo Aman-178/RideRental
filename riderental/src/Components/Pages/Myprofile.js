@@ -17,7 +17,7 @@ export const MyProfile = () => {
           <p>Shop Name</p>
         </div>
       </div>
-
+   
       {/* Contact Info */}
       <div className="contact-info">
         <h2>Contact Info</h2>

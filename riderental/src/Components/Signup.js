@@ -81,7 +81,7 @@ export const Signup = () => {
             setMessage('Signup successful!');
         } catch (error) {
             console.error('Error occurred:', error);
-            setMessage('This Email or Mobile  Already exists!');
+            setMessage('This Email or MobileNO  Already exists!');
         }
     };
 
@@ -189,7 +189,7 @@ export const Signup = () => {
                         <button type='submit'>Sign Up</button>
                     </div>
                 </div>
-                <div className='message'>
+                <div className='signup-message'>
                     {message && (
                         <div className='error-message'>
                             {message}

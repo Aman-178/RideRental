@@ -5,6 +5,8 @@ import { Navbar } from './Components/Navbar';
 import { Signup } from './Components/Signup';
 import { Login } from './Components/Pages/Login';
 import { MyProfile } from './Components/Pages/Myprofile';
+import    {Bike}  from  './Components/Pages/Bike';
+import { ShowBike } from './Components/Pages/ShowBike';
 function App() {
   return (
     <Router>
@@ -15,6 +17,8 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/login" element={<Login />} />
             <Route path="/myprofile" element={<MyProfile />} />
+            <Route  path="/bike" element={<Bike/>}  />
+            <Route  path="/showbike" element={<ShowBike/>}  />
           </Routes>
         </div>
       </div>

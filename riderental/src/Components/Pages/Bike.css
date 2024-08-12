@@ -1,0 +1,85 @@
+.bike-form-container {
+    max-width: 1200px;
+    margin: auto;
+    background: #a48c8c;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(197, 116, 116, 0.1);
+    margin-top: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+   
+}
+
+.bike-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Spacing between the form groups */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 300px; /* Flex-grow and flex-shrink with a base width of 300px */
+}
+
+.form-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%; /* Ensure full width within the container */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.bike-button {
+    background-color: #9d9591;
+    color: #0f0e0e;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    bottom: 30px;
+    left: 200px;
+    width: 350px;
+    height: 40px;
+}
+
+.message {
+    color: #2715154a;
+    position: relative;
+    top: 230px;
+    left: 150px;
+    z-index: 1;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    background: linear-gradient(rgb(207, 121, 42), rgb(33, 4, 69));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+@media (max-width: 768px) {
+    .bike-form {
+        flex-direction: column; /* Stacks the form fields vertically on smaller screens */
+    }
+    .bike-button {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
