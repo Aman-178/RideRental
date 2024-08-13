@@ -6,7 +6,7 @@ export const HeroSection = () => {
   const [data, setData] = useState([]);
   const [showMessage, setShowMessage] = useState('Available:');
   const [quantities, setQuantities] = useState([]);
-
+ 
   // Handle increment for specific index
   const handleIncrement = (index) => {
     setQuantities(prevQuantities => 
