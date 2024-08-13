@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import './Login.css'; // Import the CSS file
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
     const [formData, setFormData] = useState({
         email: '',
         confirmpassword: ''
     });
-
+    const navigate=useNavigate();
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
@@ -19,7 +20,12 @@ export const Login = () => {
         try {
             const response=await axios.post('http://localhost:9093/supplier/supplierverifydata',formData);
             if(response.status===200){
-               console.log("aman");
+                const { id, message } = response.data;
+                // Store supplier ID and/or token in localStorage or sessionStorage
+                localStorage.setItem('supplierId', id);
+                localStorage.setItem('message', message);
+                navigate('/admin');
+               console.log(id);
             }
         } catch (error) {
             console.log(error);

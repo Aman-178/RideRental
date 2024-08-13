@@ -22,7 +22,7 @@ export const HeroSection = () => {
   useEffect(() => {
     const fetchdata = async () => {
       try {
-        const response = await axios.get('http://localhost:9093/bike');
+        const response = await axios.get('http://localhost:9093/bike/allbike');
         if (response.status === 200) {
           setdata(response.data);
           if (response.data.length === 0) {

@@ -21,14 +21,14 @@ function App() {
 
         <Routes>
           <Route path='/admin' element={<Supplier/>}></Route>
-          {/* <Route path="/" element={<Loginpage  setAuthinacated={setAuthinacated}/>} /> */}
+          <Route path="/" element={<Loginpage  setAuthinacated={setAuthinacated}/>} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login/>} />
           <Route path="/myprofile" element={<MyProfile />} />
           <Route path="/bike" element={<Bike />} />
           <Route path="/showbike" element={<ShowBike />} />
-          {/* <Route path="/home" element={isAuthinacted?<Home />:<Loginpage/>} />
-          <Route path="/UserProfile" element={isAuthinacted?<UserProfile />:<Loginpage/>} />  */}
+          <Route path="/home" element={isAuthinacted?<Home />:<Loginpage/>} />
+          <Route path="/UserProfile" element={isAuthinacted?<UserProfile />:<Loginpage/>} /> 
         </Routes>
       </div>
     </Router>

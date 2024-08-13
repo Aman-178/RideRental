@@ -6,8 +6,9 @@ export const ShowBike = () => {
     const [error, setError] = useState(null);
     useEffect(() => {
         const fetchBikes = async () => {
+            const id = localStorage.getItem('supplierId');
             try {
-                const response = await axios.get('http://localhost:9093/bike');
+                const response = await axios.get(`http://localhost:9093/bike/${id}`);
                 if (response.status === 200) {
                     setBikes(response.data); // Assuming response.data is an array of bikes
                 } else {
@@ -27,21 +28,31 @@ export const ShowBike = () => {
             <div className='show'>
                 {error && <p className='error'>{error}</p>}
                 {bikes.length > 0 ? (
-                    <ul>
+                    <ul className='showbikeul'>
                         {bikes.map(bike => (
-                            <li key={bike.id}>
-                                <h3>{bike.bikeName}</h3>
-                                <p>Number: {bike.bikeNumber}</p>
-                                <p>Model: {bike.bikeModel}</p>
-                                <p>Brand: {bike.bikeBrand}</p>
-                                <p>Color: {bike.bikeColor}</p>
-                                <p>Price: {bike.price}</p>
-                                <p>Type: {bike.bikeType}</p>
-                                <p>Condition: {bike.bikeCondition}</p>
-                                <p>Quantity: {bike.quantity}</p>
-                                <p>Description: {bike.description}</p>
-                                <div>
-                                <img src={bike.image} alt='Bike' />
+                            <li className='showbikelist' key={bike.id}>
+                                <div className='bikediv'>
+                                    <div className='bikename'><h3>{bike.bikeName}</h3></div>
+                                    <div className='bikeinfo'>
+                                        <div className='bikenum'><p>Number: {bike.bikeNumber}</p></div>
+                                        <div className='bikemodal'>
+                                            <p>Model: {bike.bikeModel}</p>
+                                        </div>
+                                        <div className='bikebrand'>
+                                            <p>Brand: {bike.bikeBrand}</p>
+                                        </div>
+                                        <div className='bikecolor'>
+                                            <p>Color: {bike.bikeColor}</p>
+                                        </div>
+                                        <div className='bikecond'><p>Condition: {bike.bikeCondition}</p></div>
+                                        <div className='bikequn'><p>Quantity: {bike.quantity}</p></div>
+                                        <div className='biketype'><p>Type: {bike.bikeType}</p></div>
+                                    </div>
+                                    <div className='bikeprice'><p>Price: {bike.price}</p></div>
+
+                                    <div className='bikeimage'>
+                                        <img src={bike.image} alt='Bike' />
+                                    </div>
                                 </div>
                             </li>
                         ))}

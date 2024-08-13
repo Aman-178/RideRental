@@ -35,7 +35,8 @@ export const Bike = () => {
         Object.keys(bike).forEach(key => {
             formData.append(key, bike[key]);
         });
-
+        const id = localStorage.getItem('supplierId');
+        formData.append('supplierId', id);
         try {
             const response = await axios.post('http://localhost:9093/bike', formData, {
                 headers: {
@@ -194,7 +195,7 @@ export const Bike = () => {
                             id='image'
                             name='image'
                             onChange={handleChange}
-                            required
+                            
                         />
                     </div>
                     <div className='form-group'>

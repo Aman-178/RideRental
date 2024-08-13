@@ -48,7 +48,7 @@ export const Signup = () => {
         return;
     }
         setMessage('');
-
+       
         const formDataToSend = new FormData();
         formDataToSend.append('name', formData.name);
         formDataToSend.append('shopname', formData.shopname);

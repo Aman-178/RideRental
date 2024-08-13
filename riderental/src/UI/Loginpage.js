@@ -45,7 +45,7 @@ export const Loginpage = ({setAuthinacated}) => {
         event.preventDefault();
         try {
            
-            const response = await axios.post('http://localhost:9093/userdata/login', formData);
+            const response = await axios.post('http://localhost:9093/userdata/userlogin', formData);
             if (response.status === 200) {
                 setAuthinacated(true);
                 navigate('/Home');
@@ -63,7 +63,7 @@ export const Loginpage = ({setAuthinacated}) => {
         }
         const { cpassword, ...userData } = formData1;
         try {
-            const response = await axios.post('http://localhost:9093/userdata/signup', userData);
+            const response = await axios.post('http://localhost:9093/userdata/usersignup', userData);
             if (response.status === 201) {
                 setMessage("Successfully signed up! Please login.");
             }
