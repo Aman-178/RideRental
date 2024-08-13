@@ -2,51 +2,54 @@ import React, { useEffect, useState } from 'react';
 import './HeroSection.css';
 import axios from 'axios';
 
-
-
 export const HeroSection = () => {
-  const [data, setdata] = useState([]);
-  const [showmessage, setshowmessage] = useState('Available:');
-  const [count, setcount] = useState(1);
+  const [data, setData] = useState([]);
+  const [showMessage, setShowMessage] = useState('Available:');
+  const [quantities, setQuantities] = useState([]);
 
-  const handleDecrement = () => {
-    if (count > 1) {
-      setcount(prevCount => prevCount - 1)
-    }
-  }
-  const handleIncrement = () => {
-    setcount(prevCount => prevCount + 1)
+  // Handle increment for specific index
+  const handleIncrement = (index) => {
+    setQuantities(prevQuantities => 
+      prevQuantities.map((quantity, i) => (i === index ? quantity + 1 : quantity))
+    );
+  };
 
-  }
+  // Handle decrement for specific index
+  const handleDecrement = (index) => {
+    setQuantities(prevQuantities => 
+      prevQuantities.map((quantity, i) => (i === index && quantity > 1 ? quantity - 1 : quantity))
+    );
+  };
 
+  // Fetch data from API
   useEffect(() => {
-    const fetchdata = async () => {
+    const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:9093/bike/allbike');
         if (response.status === 200) {
-          setdata(response.data);
+          setData(response.data);
+          setQuantities(Array(response.data.length).fill(1));
           if (response.data.length === 0) {
-            setshowmessage('No Data Avialable');
+            setShowMessage('No Data Available');
           }
         } else {
-          setshowmessage('No Data Available');
+          setShowMessage('No Data Available');
           console.log('Not Responding', response.status);
         }
       } catch (error) {
-        setshowmessage('Error fetching data');
+        setShowMessage('Error fetching data');
         console.log('Error in fetching data', error);
       }
-
     };
-    fetchdata();
+    fetchData();
   }, []);
 
   return (
     <div className='Herocontainer'>
-      <div className='available'><h2>{showmessage}</h2></div>
+      <div className='available'><h2>{showMessage}</h2></div>
       <div className='cart-container'>
         {data.length > 0 && data.map((product, index) => (
-          <div className='bike-item' key={index}>
+          <div className='bike-item' key={product.id}> {/* Assuming each product has a unique id */}
             <h3 className='bike-name'>{product.bikeName}</h3>
             <p className='bike-number'>{product.bikeNumber}</p>
             <p className='bike-price'>{product.price} Per/Day</p>
@@ -56,14 +59,14 @@ export const HeroSection = () => {
                 <input
                   type="button"
                   value="-"
-                  onClick={handleDecrement}
+                  onClick={() => handleDecrement(index)}
                   className="count-button"
                 />
-                <span className="count-display">{count}</span>
+                <span className="count-display">{quantities[index]}</span>
                 <input
                   type="button"
                   value="+"
-                  onClick={handleIncrement}
+                  onClick={() => handleIncrement(index)}
                   className="count-button"
                 />
               </div>
