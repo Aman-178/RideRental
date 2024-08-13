@@ -47,7 +47,8 @@ export const Loginpage = ({setAuthinacated}) => {
            
             const response = await axios.post('http://localhost:9093/userdata/userlogin', formData);
             if (response.status === 200) {
-                setAuthinacated(true);
+                localStorage.setItem('isAuthenticated', 'true'); 
+                setAuthinacated(true); 
                 navigate('/Home');
             }
         } catch (error) {

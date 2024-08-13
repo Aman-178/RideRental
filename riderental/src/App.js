@@ -9,26 +9,29 @@ import { ShowBike } from './Components/Pages/ShowBike';
 import { Loginpage } from './UI/Loginpage';
 import { Home } from './UI/Home';
 import { UserProfile } from './UI/UserProfile';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Supplier } from './Components/Supplier';
 
 function App() {
-  const[isAuthinacted,setAuthinacated]=useState(false)
-  
+  const[isAuthinacated,setAuthinacated]=useState(false)
+  useEffect(() => {
+    const authStatus = localStorage.getItem('isAuthenticated');
+    setAuthinacated(authStatus === 'true');
+  }, []);
   return (
     <Router>
       <div id="RideRental">
 
-        <Routes>
+        <Routes> 
+        <Route path="/" element={<Loginpage setAuthinacated={setAuthinacated} />} />
+          <Route path="/home" element={isAuthinacated ? <Home /> : <Loginpage setAuthinacated={setAuthinacated} />} />
+          <Route path="/UserProfile" element={isAuthinacated ? <UserProfile /> : <Loginpage setAuthinacated={setAuthinacated} />} /> 
           <Route path='/admin' element={<Supplier/>}></Route>
-          <Route path="/" element={<Loginpage  setAuthinacated={setAuthinacated}/>} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login/>} />
           <Route path="/myprofile" element={<MyProfile />} />
           <Route path="/bike" element={<Bike />} />
           <Route path="/showbike" element={<ShowBike />} />
-          <Route path="/home" element={isAuthinacted?<Home />:<Loginpage/>} />
-          <Route path="/UserProfile" element={isAuthinacted?<UserProfile />:<Loginpage/>} /> 
         </Routes>
       </div>
     </Router>
