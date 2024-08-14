@@ -24,12 +24,12 @@ export const Navbar = () => {
         console.log(supplierid);
         const FetchRequestData = async () => {
             try {
-                const response = await axios.get(`http://localhost:9093/bookingdata/getorderbooking?supplierid=${supplierid}`);
-                console.log('Response data:', response.data);                
+                const response = await axios.get(`http://localhost:9093/bookingdata?supplierid=${supplierid}`);
+                console.log('Response data:', response.data);
                 if (response.status === 200) {
                     SetRequestOrderData(response.data);
                     console.log(response.data);
-                }else{
+                } else {
                     console.log("Api does Not Responding");
                 }
             } catch (error) {
@@ -37,6 +37,7 @@ export const Navbar = () => {
             }
         }
         FetchRequestData();
+        setInterval(() => FetchRequestData(), 1000);
     }, [])
 
     return (
@@ -88,12 +89,34 @@ export const Navbar = () => {
             </div>
             <div>
                 <h2>Booking Request</h2>
-                <div>
-                   {
-                    RequestOrderData.map(order=>(
-                        <div>{order.username}</div>
-                    ))
-                   }
+                <div className='orderrequest'>
+                    {
+                        RequestOrderData.map((order, index) => (
+                            <div className="order-container" key={index}>
+                                <div className="order-info">
+                                    <p><strong>Customer Name:</strong> {order.username}</p>
+                                    <p><strong>Customer Address:</strong> {order.address}</p>
+                                    <p><strong>Customer Contact No:</strong> {order.mobomo}</p>
+                                </div>
+                                <div className="bike-info">
+                                    <p><strong>Bike Name:</strong> {order.bikename}</p>
+                                    <p><strong>Bike Number:</strong> {order.bikenumber}</p>
+                                    <p><strong>Per/Day:</strong> {order.orignalprice}</p>
+                                    <p><strong>Total Days:</strong> {order.days}</p>
+                                    <p><strong>Total Price:</strong> {order.totalprice}</p>
+                                </div>
+                                <div className="status-actions">
+                                    <p><strong>Status:</strong> {order.status}</p>
+                                    <div className="button-group">
+                                        <button className="accept-button">Accept</button>
+                                        <button className="decline-button">Decline</button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        ))
+                    }
                 </div>
             </div>
         </div>

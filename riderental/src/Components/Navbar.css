@@ -37,3 +37,98 @@
    
     
 }
+.order-container {
+    display: flex;
+    border: 1px solid #1d1b1b; 
+    margin-bottom: 16px;
+    border-radius: 8px;
+    background-color: #452c2c; 
+    box-shadow: 0 2px 4px rgba(73, 25, 25, 0.1); 
+    gap: 16px; 
+    overflow: auto;
+    justify-content: space-between;
+}
+
+.order-info, .bike-info, .status-actions {
+    
+    border: 5px solid black;
+}
+.order-info{
+    background-color: #1d1b1b;
+    height: 150px;
+    min-width:200px;
+    
+}
+.bike-info{
+    background-color: #361010;
+    height: 150px;
+    min-width:200px;
+   
+}
+.bike-info p {
+    color: #5e5a5afd;
+    position: relative;
+    left: 5px;
+    text-align: left;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    border: 1px solid black;
+}
+
+.bike-info p strong {
+    font-size: 16px; 
+    color: #353333;
+}
+
+
+.status-actions{
+    background-color: #371b06;
+    padding: 10px;
+}
+.status-actions {
+    max-width: 200px; 
+}
+
+
+
+.button-group {
+    display: flex;
+    gap: 8px; 
+    margin-top: 16px;
+}
+.status-actions p{
+    color: #0be916;
+    font-size:large;
+    font-weight: bold;
+}
+.status-actions strong{
+    color: aliceblue;
+}
+button {
+    margin-top: 50px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.accept-button {
+    background-color: #1b3b1c; 
+    color: rgb(51, 19, 19);
+}
+
+.decline-button {
+    background-color: #841810; 
+    color: rgb(37, 36, 36);
+}
+
+.accept-button:hover {
+    background-color: #0be916; }
+
+.decline-button:hover {
+    background-color: #c46060;
+}
