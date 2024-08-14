@@ -6,11 +6,11 @@
 
 .available h2 {
   font-size: xx-large;
-  color: rgba(67, 22, 11, 0.507);
+  color: rgba(202, 200, 200, 0.943);
   animation: blink 1s step-start infinite;
   position: relative;
   bottom: 30px;
-  background-image: linear-gradient(lightpink,rgb(215, 240, 215));
+  background-image: linear-gradient(rgb(84, 85, 64),rgb(97, 49, 19));
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   max-width: 190px;
   border-radius: 5px;

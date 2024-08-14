@@ -6,14 +6,14 @@ export const HeroSection = () => {
   const [data, setData] = useState([]);
   const [showMessage, setShowMessage] = useState('Available:');
   const [quantities, setQuantities] = useState([]);
- 
+
   // Handle increment for specific index
   const handleIncrement = (index) => {
     setQuantities(prevQuantities => 
       prevQuantities.map((quantity, i) => (i === index ? quantity + 1 : quantity))
     );
   };
-
+  
   // Handle decrement for specific index
   const handleDecrement = (index) => {
     setQuantities(prevQuantities => 
@@ -44,6 +44,28 @@ export const HeroSection = () => {
     fetchData();
   }, []);
 
+  const senddata = async (index) => {
+    const formDataToSend = new FormData();
+    formDataToSend.append('orignalprice', data[index].price);
+    formDataToSend.append('Days', quantities[index]);
+    const totalprice = data[index].price * quantities[index];
+    formDataToSend.append('totalprice', totalprice);
+    formDataToSend.append('bikenumber', data[index].bikeNumber);
+    formDataToSend.append('bikename', data[index].bikeName);
+    formDataToSend.append('supplierid', data[index].supplier.id);
+
+    try {
+      const response = await axios.post('http://localhost:9093/bookingdata/userbook', formDataToSend);
+      if (response.status === 201) {
+        console.log('Data successfully sent:', response.data);
+      } else {
+        console.log('Unexpected response status:', response.status);
+      }
+    } catch (error) {
+      console.error('Error sending data:', error);
+    }
+  };
+
   return (
     <div className='Herocontainer'>
       <div className='available'><h2>{showMessage}</h2></div>
@@ -71,7 +93,8 @@ export const HeroSection = () => {
                 />
               </div>
             </div>
-            <input type='button' value='Book' className='book-button' />
+            <input type='button' value='Book' className='book-button' 
+            onClick={() => senddata(index)}/>
           </div>
         ))}
       </div>
