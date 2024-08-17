@@ -10,6 +10,7 @@
   animation: blink 1s step-start infinite;
   position: relative;
   bottom: 30px;
+  left: 20px;
   background-image: linear-gradient(rgb(84, 85, 64),rgb(97, 49, 19));
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   max-width: 190px;

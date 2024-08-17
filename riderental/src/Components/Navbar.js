@@ -17,7 +17,8 @@ export const Navbar = () => {
     const handleMouseLeave = () => setIsHovered(false);
     const handleMouseEnterignup = () => setISHovered(true);
     const handleMouseLeavesignup = () => setISHovered(false);
-    const handleClick = () => setIsClicked(prevState => !prevState); // Toggle state on click
+    const handleClick = () => setIsClicked(prevState => !prevState);
+    
 
     useEffect(() => {
         const supplierid = localStorage.getItem('supplierId');
@@ -39,7 +40,43 @@ export const Navbar = () => {
         FetchRequestData();
         setInterval(() => FetchRequestData(), 1000);
     }, [])
-
+  const handleAccept=async(index)=>{
+    const orderstatus=RequestOrderData[index];
+    const orderid=orderstatus.id;
+    const status='Accept';
+    console.log(status);
+    console.log(orderid);
+    console.log("data index is",orderstatus)
+    const response = await axios.put('http://localhost:9093/bookingdata/updateStatus', null, {
+        params: {
+          id: orderid,
+          status: status
+        }
+      });
+    if(response.status===200){
+        console.log('status Updated');
+    }
+   
+  }
+  const handleDecline=async(index)=>{
+    const orderstatus=RequestOrderData[index];
+    const status='Decline';
+    const orderid=orderstatus.id;
+    console.log(orderid);
+    console.log("data index is",orderstatus)
+    
+    const response = await axios.put('http://localhost:9093/bookingdata/updateStatus', null, {
+        params: {
+          id: orderid,
+          status: status
+        }
+      });
+    if(response.status===200){
+        console.log('status Updated');
+    }
+    
+   
+  }
     return (
         <div>
             <div id='header'>
@@ -50,7 +87,7 @@ export const Navbar = () => {
                     {isClicked ? <Option /> : ""}
                 </div>
                 <div id='name'>
-                    <h2>WELCOME RIDE-RENTAL</h2>
+                    <h1>WELCOME RIDE-RENTAL</h1>
                 </div>
                 <div>
                     <Link to="/login">
@@ -108,8 +145,8 @@ export const Navbar = () => {
                                 <div className="status-actions">
                                     <p><strong>Status:</strong> {order.status}</p>
                                     <div className="button-group">
-                                        <button className="accept-button">Accept</button>
-                                        <button className="decline-button">Decline</button>
+                                        <button className="accept-button" onClick={()=>handleAccept(index)}>Accept</button>
+                                        <button className="decline-button"onClick={()=>handleDecline(index)}>Decline</button>
                                     </div>
                                 </div>
                             </div>

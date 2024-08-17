@@ -11,6 +11,8 @@ import { Home } from './UI/Home';
 import { UserProfile } from './UI/UserProfile';
 import { useEffect, useState } from 'react';
 import { Supplier } from './Components/Supplier';
+import { Payment } from './UI/Payment';
+
 
 function App() {
   const[isAuthinacated,setAuthinacated]=useState(false)
@@ -32,6 +34,7 @@ function App() {
           <Route path="/myprofile" element={<MyProfile />} />
           <Route path="/bike" element={<Bike />} />
           <Route path="/showbike" element={<ShowBike />} />
+          <Route path="/payment" element={<Payment />} />
         </Routes>
       </div>
     </Router>
