@@ -11,7 +11,7 @@ export const HeroSection = () => {
   const [quantities, setQuantities] = useState([]);
   const [loading, setloading] = useState('')
   const [BookingId, setBookingId] = useState('');
-  const [status,setStatus]=useState('')
+  const [status, setStatus] = useState('')
   // Handle increment for specific index
   const handleIncrement = (index) => {
     setQuantities(prevQuantities =>
@@ -25,7 +25,7 @@ export const HeroSection = () => {
       prevQuantities.map((quantity, i) => (i === index && quantity > 1 ? quantity - 1 : quantity))
     );
   };
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   // Fetch data from API
   useEffect(() => {
     const fetchData = async () => {
@@ -51,7 +51,6 @@ export const HeroSection = () => {
   }, []);
 
   const senddata = async (index) => {
-    
     //Sending Requset for Booking.
     const formDataToSend = new FormData();
     formDataToSend.append('orignalprice', data[index].price);
@@ -73,11 +72,11 @@ export const HeroSection = () => {
     } catch (error) {
       console.error('Error sending data:', error);
     }
-  
-   
-    
+
+
+
   };
-  
+
   useEffect(() => {
     let intervalId;
 
@@ -123,7 +122,7 @@ export const HeroSection = () => {
 
     fetchStatus();
 
-    
+
     return () => clearInterval(intervalId);
   }, [BookingId]);
 
@@ -133,12 +132,12 @@ export const HeroSection = () => {
       navigate('/payment');
       console.log('Booking accepted');
     } else if (status === 'Decline') {
-      // Handle the case when status is 'Decline'
-      console.log('Booking declined');
+      // Handle the case when status  is 'Decline'
+      console.log('Booking declned');
     }
   }, [status]);
 
-  
+
 
 
   if (loading) return <Spinner></Spinner>
