@@ -12,6 +12,7 @@ export const HeroSection = () => {
   const [loading, setloading] = useState('')
   const [BookingId, setBookingId] = useState('');
   const [status, setStatus] = useState('')
+
   // Handle increment for specific index
   const handleIncrement = (index) => {
     setQuantities(prevQuantities =>
@@ -25,6 +26,7 @@ export const HeroSection = () => {
       prevQuantities.map((quantity, i) => (i === index && quantity > 1 ? quantity - 1 : quantity))
     );
   };
+
   const navigate = useNavigate();
   // Fetch data from API
   useEffect(() => {
@@ -107,12 +109,13 @@ export const HeroSection = () => {
                   if (pollResponse.data !== 'Wait') {
                     clearInterval(intervalId);
                     setloading(false);
+                    
                   }
                 }
               } catch (error) {
                 console.error('Error fetching booking status during polling:', error);
               }
-            }, 1000); // Poll every 5 seconds
+            }, 1000); // Poll every 1 seconds
           }
         }
       } catch (error) {

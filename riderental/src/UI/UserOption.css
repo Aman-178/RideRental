@@ -1,0 +1,38 @@
+/* UserList.css */
+
+.userList {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    margin: 20px auto;
+    padding: 15px;
+    position: relative;
+    top: 190px;
+    z-index: 2;
+  }
+  
+  .userList ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .userList li {
+    padding: 10px;
+    font-size: 1.1rem;
+    color: #333;
+    cursor: pointer;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .userList li:hover {
+    background-color: #f0f0f0;
+    color: #4a90e2;
+  }
+  
+  .userList li:last-child {
+    border-bottom: none;
+  }
+  

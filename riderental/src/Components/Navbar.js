@@ -10,7 +10,7 @@ export const Navbar = () => {
     const [iSHovered, setISHovered] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const [RequestOrderData, SetRequestOrderData] = useState([])
-
+   
 
     // Handlers for mouse events
     const handleMouseEnter = () => setIsHovered(true);
@@ -146,7 +146,9 @@ export const Navbar = () => {
                                     <p><strong>Status:</strong> {order.status}</p>
                                     <div className="button-group">
                                         <button className="accept-button" onClick={()=>handleAccept(index)}>Accept</button>
-                                        <button className="decline-button"onClick={()=>handleDecline(index)}>Decline</button>
+                                        <button className="decline-button"onClick={()=>handleDecline(index)}
+                                            
+                                            >Decline</button>
                                     </div>
                                 </div>
                             </div>

@@ -25,7 +25,7 @@ function App() {
       <div id="RideRental">
 
         <Routes> 
-        <Route   path="/" element={<Loginpage setAuthinacated={setAuthinacated} />} />
+          <Route path="/" element={<Loginpage setAuthinacated={setAuthinacated} />} />
           <Route path="/home" element={isAuthinacated ? <Home /> : <Loginpage setAuthinacated={setAuthinacated} />} />
           <Route path="/UserProfile" element={isAuthinacated ? <UserProfile /> : <Loginpage setAuthinacated={setAuthinacated} />} /> 
           <Route path='/admin' element={<Supplier/>}></Route>
@@ -35,6 +35,7 @@ function App() {
           <Route path="/bike" element={<Bike />} />
           <Route path="/showbike" element={<ShowBike />} />
           <Route path="/payment" element={<Payment />} />
+          
         </Routes>
       </div>
     </Router>
