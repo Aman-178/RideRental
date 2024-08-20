@@ -16,7 +16,7 @@ export const Orderpage = () => {
                 });
                 if (response.status === 200) {
                     setData(response.data);
-                    console.log(response.data); // Log the data received
+                    console.log(response.data); 
                 }
             } catch (error) {
                 console.error("Error fetching data:", error);
@@ -24,7 +24,8 @@ export const Orderpage = () => {
         };
 
         fetchData();
-    }, []); // Empty dependency array means this effect runs once on mount
+    }, []); 
+
 
     // Filter data based on the status
     const filterdata = data.filter(order => order.status === "successfull");
