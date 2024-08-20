@@ -8,8 +8,8 @@
     margin: 20px auto;
     padding: 15px;
     position: relative;
-    top: 190px;
-    z-index: 2;
+    top: 90px;
+    z-index: 1;
   }
   
   .userList ul {
@@ -24,7 +24,9 @@
     color: #333;
     cursor: pointer;
     border-bottom: 1px solid #ddd;
-    transition: background-color 0.3s, color 0.3s;
+    font-size: large;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
   }
   
   .userList li:hover {
@@ -35,4 +37,3 @@
   .userList li:last-child {
     border-bottom: none;
   }
-  

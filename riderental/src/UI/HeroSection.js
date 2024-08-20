@@ -12,6 +12,7 @@ export const HeroSection = () => {
   const [loading, setloading] = useState('')
   const [BookingId, setBookingId] = useState('');
   const [status, setStatus] = useState('')
+  const[BookingMessage,setBookingMessage]=useState('')
 
   // Handle increment for specific index
   const handleIncrement = (index) => {
@@ -135,7 +136,7 @@ export const HeroSection = () => {
       navigate('/payment');
       console.log('Booking accepted');
     } else if (status === 'Decline') {
-      // Handle the case when status  is 'Decline'
+       setBookingMessage('This Supplier Not Accepting This Time !')
       console.log('Booking declned');
     }
   }, [status]);
@@ -150,6 +151,7 @@ export const HeroSection = () => {
       <div className='cart-container'>
         {data.length > 0 && data.map((product, index) => (
           <div className='bike-item' key={product.id}> {/* Assuming each product has a unique id */}
+        
             <h3 className='bike-name'>{product.bikeName}</h3>
             <p className='bike-number'>{product.bikeNumber}</p>
             <p className='bike-price'>{product.price} Per/Day</p>

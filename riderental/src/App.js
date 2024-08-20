@@ -12,6 +12,8 @@ import { UserProfile } from './UI/UserProfile';
 import { useEffect, useState } from 'react';
 import { Supplier } from './Components/Supplier';
 import { Payment } from './UI/Payment';
+import { Orderpage } from './Components/Pages/Orderpage';
+
 
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
   return (
     <Router>
       <div id="RideRental">
-
+        
         <Routes> 
           <Route path="/" element={<Loginpage setAuthinacated={setAuthinacated} />} />
           <Route path="/home" element={isAuthinacated ? <Home /> : <Loginpage setAuthinacated={setAuthinacated} />} />
@@ -34,8 +36,9 @@ function App() {
           <Route path="/myprofile" element={<MyProfile />} />
           <Route path="/bike" element={<Bike />} />
           <Route path="/showbike" element={<ShowBike />} />
+          <Route path="/Orderpage" element={<Orderpage />} />
           <Route path="/payment" element={<Payment />} />
-          
+       
         </Routes>
       </div>
     </Router>

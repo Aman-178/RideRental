@@ -1,0 +1,45 @@
+.ConfirmOrder-Container {
+    overflow-x: hidden;
+    background-color: rgb(43, 21, 26);
+    height: 100vh;
+    background-image: linear-gradient(rgb(43, 21, 26), rgb(68, 9, 23));
+}
+
+.ConfirmOrder-Container h2 {
+    color: azure;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bolder;
+    border: 1px solid black;
+    position: relative;
+    left: 0px;
+    height: 50px;
+    align-content: center;
+    border-radius: 10px;
+    background-color: rgb(61, 44, 23);
+
+}
+/* Style for the entire table */
+table {
+    
+    border: 2px solid rgb(5, 5, 72); 
+
+    width: 100%; 
+}
+
+
+th, td {
+    border: 2px solid rgb(78, 22, 22); /* Border for individual cells */
+    padding: 8px; /* Adds padding inside each cell */
+    text-align: left; /* Aligns text to the left within cells */
+}
+
+/* Style for table header row */
+thead th {
+    background-color: #8b4747; /* Light gray background for header cells */
+}
+tbody td{
+   color: azure;
+   font-size: medium;
+   font-weight:700;
+   font-family: 'Times New Roman', Times, serif;
+}

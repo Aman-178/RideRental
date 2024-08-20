@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './Loginpage.css'; 
+import './Loginpage.css';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
-export const Loginpage = ({setAuthinacated}) => {
+export const Loginpage = ({ setAuthinacated }) => {
     const [message, setMessage] = useState('');
     const [visible, setVisible] = useState(true);
 
@@ -18,7 +18,7 @@ export const Loginpage = ({setAuthinacated}) => {
         password: '',
         cpassword: ''
     });
-    
+
     const navigate = useNavigate(); // Initialize useNavigate hook
 
     const handleChange = (event) => {
@@ -28,7 +28,7 @@ export const Loginpage = ({setAuthinacated}) => {
             [name]: value
         });
     };
-    
+
     const handleChange1 = (event) => {
         const { name, value } = event.target;
         setFormData1({
@@ -44,18 +44,18 @@ export const Loginpage = ({setAuthinacated}) => {
     const handleLogin = async (event) => {
         event.preventDefault();
         try {
-           
+
             const response = await axios.post('http://localhost:9093/userdata/userlogin', formData);
             if (response.status === 200) {
-                const id=response.data;
-                localStorage.setItem('userid',id);
-                localStorage.setItem('isAuthenticated', 'true'); 
-                setAuthinacated(true); 
+                const id = response.data;
+                localStorage.setItem('userid', id);
+                localStorage.setItem('isAuthenticated', 'true');
+                setAuthinacated(true);
                 navigate('/Home');
             }
         } catch (error) {
             setMessage("Login failed. Please check your credentials.");
-        } 
+        }
     };
 
     const handleSubmit1 = async (event) => {
@@ -86,8 +86,8 @@ export const Loginpage = ({setAuthinacated}) => {
                     <h2>Login</h2>
                     <div className="form-group">
                         <label>Email:</label>
-                        <input 
-                            type='email' 
+                        <input
+                            type='email'
                             placeholder='Enter Email'
                             name='email'
                             value={formData.email}
@@ -97,17 +97,18 @@ export const Loginpage = ({setAuthinacated}) => {
                     </div>
                     <div className="form-group">
                         <label>Password:</label>
-                        <input 
-                            type='password' 
+                        <input
+                            type='password'
                             placeholder='Enter Password'
                             name='password'
                             value={formData.password}
                             onChange={handleChange}
                             required
+
                         />
                     </div>
                     <div className="form-group">
-                        <input type='submit' value='Login'/>
+                        <input type='submit' value='Login' />
                     </div>
                     <p>New User? <button className='signupbotton' type="button" onClick={handleClick}>Sign Up</button></p>
                     {message && <div className='Loginmessage'>{message}</div>}
@@ -117,7 +118,7 @@ export const Loginpage = ({setAuthinacated}) => {
                     <h2>Sign Up</h2>
                     <div className="form-group">
                         <label>Full Name:</label>
-                        <input 
+                        <input
                             type='text'
                             name='fullname'
                             value={formData1.fullname}
@@ -128,7 +129,7 @@ export const Loginpage = ({setAuthinacated}) => {
                     </div>
                     <div className="form-group">
                         <label>Email:</label>
-                        <input 
+                        <input
                             type='email'
                             name='email'
                             value={formData1.email}
@@ -139,7 +140,7 @@ export const Loginpage = ({setAuthinacated}) => {
                     </div>
                     <div className="form-group">
                         <label>Contact No:</label>
-                        <input 
+                        <input
                             type='tel'
                             name='mobno'
                             value={formData1.mobno}
@@ -151,7 +152,7 @@ export const Loginpage = ({setAuthinacated}) => {
                     </div>
                     <div className="form-group">
                         <label>Password:</label>
-                        <input 
+                        <input
                             type='password'
                             name='password'
                             value={formData1.password}
@@ -162,7 +163,7 @@ export const Loginpage = ({setAuthinacated}) => {
                     </div>
                     <div className="form-group">
                         <label>Confirm Password:</label>
-                        <input 
+                        <input
                             type='password'
                             name='cpassword'
                             placeholder='Confirm Password'
@@ -171,7 +172,7 @@ export const Loginpage = ({setAuthinacated}) => {
                         />
                     </div>
                     <div className="form-group">
-                        <input type='submit' value='Sign Up'/>
+                        <input type='submit' value='Sign Up' />
                         {message && <div className='message'>{message}</div>}
                     </div>
                     <p>Already have an account? <button className='loginbutton' type="button" onClick={handleClick}>Login</button></p>

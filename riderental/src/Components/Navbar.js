@@ -4,13 +4,12 @@ import './Navbar.css';
 import { Option } from './Option';
 import { FaArrowAltCircleDown, FaArrowAltCircleUp, FaList, FaCut } from 'react-icons/fa';
 import axios from 'axios';
-
 export const Navbar = () => {
     const [isHovered, setIsHovered] = useState(false);
     const [iSHovered, setISHovered] = useState(false);
     const [isClicked, setIsClicked] = useState(false);
     const [RequestOrderData, SetRequestOrderData] = useState([])
-   
+    
 
     // Handlers for mouse events
     const handleMouseEnter = () => setIsHovered(true);
@@ -40,8 +39,9 @@ export const Navbar = () => {
         FetchRequestData();
         setInterval(() => FetchRequestData(), 1000);
     }, [])
+    const filterdata=RequestOrderData.filter(order=>order.status!=='successfull')
   const handleAccept=async(index)=>{
-    const orderstatus=RequestOrderData[index];
+    const orderstatus=filterdata[index];
     const orderid=orderstatus.id;
     const status='Accept';
     console.log(status);
@@ -59,7 +59,7 @@ export const Navbar = () => {
    
   }
   const handleDecline=async(index)=>{
-    const orderstatus=RequestOrderData[index];
+    const orderstatus=filterdata[index];
     const status='Decline';
     const orderid=orderstatus.id;
     console.log(orderid);
@@ -128,7 +128,7 @@ export const Navbar = () => {
                 <h2>Booking Request</h2>
                 <div className='orderrequest'>
                     {
-                        RequestOrderData.map((order, index) => (
+                        filterdata.map((order, index) => (
                             <div className="order-container" key={index}>
                                 <div className="order-info">
                                     <p><strong>Customer Name:</strong> {order.username}</p>

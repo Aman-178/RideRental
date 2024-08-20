@@ -1,0 +1,37 @@
+.payment-container{
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-image: linear-gradient(green,whitesmoke);
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+.payment-container h2{
+   position: relative;
+   width: 1100px;
+   border: 1px solid black;
+   color: antiquewhite;
+   background-color: black;
+
+}
+.cancelbutton{
+    background-image: linear-gradient(rgb(150, 39, 39),rgb(71, 7, 7));
+    border-radius: 5px;
+    position: relative;
+    left: 300px;
+    width: 200px;
+    height: 40px;
+    font-weight: bold;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+}
+.paymentbutton{
+    background-image: linear-gradient(rgb(6, 55, 8),rgb(31, 191, 84));
+    border-radius: 5px;
+    position: relative;
+    width: 200px;
+    height: 40px;
+    font-weight: bold;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;
+}

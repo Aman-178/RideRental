@@ -24,6 +24,7 @@ export const Payment = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    // const response =axios.post('http://localhost:9093/paymentverification')
     console.log(formData)
   }
   return (
@@ -137,7 +138,8 @@ export const Payment = () => {
             </div>
           )}
 
-          <button type="submit">Pay Now</button>
+          <button className='paymentbutton' type="submit">Pay Now</button>
+          <button className='cancelbutton'>Cancel</button>
         </form>
       </div>
     </div>
