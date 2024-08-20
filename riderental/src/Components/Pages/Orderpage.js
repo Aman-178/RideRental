@@ -43,6 +43,7 @@ export const Orderpage = () => {
                               <th>Customer ContactNo:</th>
                               <th>Customer Address:</th>
                               <th>Bike Name:</th>
+                              <th>Bike Number:</th>
                               <th>Orignal Price:</th>
                               <th>Total Price:</th>
                               <th>Total Days:</th>
@@ -56,6 +57,7 @@ export const Orderpage = () => {
                                   <td>{order.mobomo}</td>
                                   <td>{order.address}</td>
                                   <td>{order.bikename}</td>
+                                  <td>{order.bikenumber}</td>
                                   <td>{order.orignalprice}</td>
                                   <td>{order.totalprice}</td>
                                   <td>{order.days}</td>
