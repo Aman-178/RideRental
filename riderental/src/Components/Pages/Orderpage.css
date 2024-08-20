@@ -21,14 +21,14 @@
 /* Style for the entire table */
 table {
     
-    border: 2px solid rgb(5, 5, 72); 
+    border: 2px solid rgba(150, 150, 177, 0.759); 
 
     width: 100%; 
 }
 
 
 th, td {
-    border: 2px solid rgb(78, 22, 22); /* Border for individual cells */
+    border: 2px solid rgb(242, 233, 233); /* Border for individual cells */
     padding: 8px; /* Adds padding inside each cell */
     text-align: left; /* Aligns text to the left within cells */
 }
