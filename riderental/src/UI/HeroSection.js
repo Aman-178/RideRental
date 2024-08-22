@@ -154,6 +154,8 @@ export const HeroSection = () => {
         
             <h3 className='bike-name'>{product.bikeName}</h3>
             <p className='bike-number'>{product.bikeNumber}</p>
+            <p className='supplierAddress'>{product.supplier.address}</p>
+            <p className='supplierAddress'>{product.supplier.shopownername}</p>
             <p className='bike-price'>{product.price} Per/Day</p>
             <div className='booking-section'>
               <p className='days-label'>For How Many Days:</p>

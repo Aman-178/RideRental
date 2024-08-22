@@ -19,7 +19,15 @@
     bottom: 20px;
     color: bisque;
 }
-
+.userlogin{
+    position: relative;
+    left: 105px;
+}
+.usersignup{
+    position: relative;
+    top: 20px;
+   left: 120px;
+}
 .login-form {
     position: relative;
     bottom: 40px;
@@ -58,11 +66,19 @@
 }
 .signup-form {
    position: relative;
-   bottom: 30px;
+   bottom: 70px;
    box-shadow: 2px 2px 2px 2px black;
    width: 400px;
    padding-left: 10px;
    padding-right: 10px;
    margin-top: 50px;
-   
+   height: 650px;
+}
+.signup-form .form-group{
+    position: relative;
+    top: 10px;
+}
+.signupp{
+    position: relative;
+    bottom: 50px;
 }

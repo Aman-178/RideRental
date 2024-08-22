@@ -83,7 +83,7 @@ export const Loginpage = ({ setAuthinacated }) => {
             </div>
             {visible ? (
                 <form className="login-form" onSubmit={handleLogin}>
-                    <h2>Login</h2>
+                    <h2 className='userlogin'>Login</h2>
                     <div className="form-group">
                         <label>Email:</label>
                         <input
@@ -115,7 +115,7 @@ export const Loginpage = ({ setAuthinacated }) => {
                 </form>
             ) : (
                 <form className="signup-form" onSubmit={handleSubmit1}>
-                    <h2>Sign Up</h2>
+                    <h2 className='usersignup'>Sign Up</h2>
                     <div className="form-group">
                         <label>Full Name:</label>
                         <input
@@ -175,7 +175,9 @@ export const Loginpage = ({ setAuthinacated }) => {
                         <input type='submit' value='Sign Up' />
                         {message && <div className='message'>{message}</div>}
                     </div>
+                    <div className='signupp'>
                     <p>Already have an account? <button className='loginbutton' type="button" onClick={handleClick}>Login</button></p>
+                    </div>
                 </form>
             )}
         </div>

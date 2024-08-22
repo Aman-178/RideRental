@@ -18,7 +18,7 @@
     background-image: linear-gradient(rgb(150, 39, 39),rgb(71, 7, 7));
     border-radius: 5px;
     position: relative;
-    left: 300px;
+   bottom: 100px;
     width: 200px;
     height: 40px;
     font-weight: bold;
@@ -34,4 +34,7 @@
     font-weight: bold;
     font-size: medium;
     font-family: 'Times New Roman', Times, serif;
+}
+.paymentmake{
+    text-align: center;
 }
