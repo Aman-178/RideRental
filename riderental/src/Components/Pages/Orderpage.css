@@ -18,6 +18,10 @@
     background-color: rgb(61, 44, 23);
 
 }
+.confirmsOrders{
+    position: relative;
+    bottom: 40px;
+}
 /* Style for the entire table */
 table {
     

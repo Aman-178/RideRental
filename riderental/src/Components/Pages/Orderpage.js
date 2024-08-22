@@ -33,7 +33,7 @@ export const Orderpage = () => {
     return (
         <div className='ConfirmOrder-Container'>
             <h2>Confirm Order Recceived Page</h2>
-            <div>
+            <div className='confirmsOrders'>
 
                 {filterdata.length > 0 ? (
                       <table>

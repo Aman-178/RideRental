@@ -37,6 +37,10 @@
    
     
 }
+.orderrequest{
+    position: relative;
+    bottom: 30px;
+}
 .order-container {
     display: flex;
     border: 1px solid #1d1b1b; 
@@ -131,4 +135,17 @@ button {
 
 .decline-button:hover {
     background-color: #c46060;
+}
+.headerbooking{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+    right: 400px;
+    top: -24px;
+    border: 1px solid burlywood;
+    background-color: #1b3b1c;
+    padding-left: 70px;
+    color: #f4eded;
+    font-size: 30px;
+    border-radius: 58px;
 }

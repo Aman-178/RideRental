@@ -30,7 +30,7 @@ function App() {
           <Route path="/" element={<Loginpage setAuthinacated={setAuthinacated} />} />
           <Route path="/home" element={isAuthinacated ? <Home /> : <Loginpage setAuthinacated={setAuthinacated} />} />
           <Route path="/UserProfile" element={isAuthinacated ? <UserProfile /> : <Loginpage setAuthinacated={setAuthinacated} />} /> 
-          <Route path='/admin' element={<Supplier/>}></Route>
+          <Route path='/supplier' element={<Supplier/>}></Route>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login/>} />
           <Route path="/myprofile" element={<MyProfile />} />

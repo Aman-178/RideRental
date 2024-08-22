@@ -1,8 +1,9 @@
 /* UserProfile.css */
 .profilesection{
-  height: 100vh;
   background-color: #907474;
   padding: 20px;
+  overflow-y: hidden;
+  overflow-x: hidden;
 
 }
 
@@ -28,6 +29,7 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-left: 250px;
 }
 
 .profile-picture {
@@ -42,10 +44,18 @@ h1 {
   font-size: 3rem;
   color: #4a90e2;
   margin-right: 20px;
+  position: relative;
+  bottom: 100px;
+  left: 100px;
+  
 }
+
 
 .profile-details {
   flex: 1;
+  margin-top: 100px;
+  position: relative;
+  right: 50px;
 }
 
 .form-group {
