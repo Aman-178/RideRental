@@ -1,0 +1,31 @@
+/* Bookingpage.css */
+
+.orderConfirmed {
+    padding: 20px;
+    background-color: #9a2222;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #360606;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #973b3b;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #342e2e;
+  }
+  
+  tr:hover {
+    background-color: #03350d;
+  }
+  

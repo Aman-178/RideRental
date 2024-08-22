@@ -1,9 +1,9 @@
 
 #option{
     margin-top: 9px;
-    background-color: rgb(177, 203, 227);
-    border-right:3px solid rgb(108, 164, 212);
-    
+    background-color: rgb(118, 96, 74);
+    border-right:3px solid rgb(205, 186, 182);
+    color: beige;
     position: absolute;
     left: 0;
     font-weight: bold;
@@ -13,12 +13,9 @@
     min-width: 190px;
     z-index: 1;
 }
-#optionList li{
+#optionList ul {
     list-style: none;
     position: relative;
     right: 35px;
-}
-#optionList button{
-    background-color: transparent;
-    font-size: medium;
+    
 }

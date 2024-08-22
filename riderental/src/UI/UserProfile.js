@@ -4,6 +4,7 @@ import { FaUser } from 'react-icons/fa';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
+
 export const UserProfile = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [user, setuserdata] = useState({
@@ -122,6 +123,7 @@ export const UserProfile = () => {
         </div>
       </div>
     </div>
+  
    </div>
   );
 };

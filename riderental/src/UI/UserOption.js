@@ -5,7 +5,7 @@ export const UserOption = () => {
   return (
     <div className='userList'>
       <ul>
-        <li>MyBooking</li>
+        <Link to='/bookingpage'style={{ textDecoration: 'none' }}><li>MyBooking</li></Link>
         <Link to='/UserProfile' style={{ textDecoration: 'none' }}>
           <li>MyProfile</li>
         </Link>            

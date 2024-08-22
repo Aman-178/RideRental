@@ -79,7 +79,7 @@ export const Bike = () => {
     return (
         <div>
             <div className='bike-form-container'>
-                <h2>Bike Information</h2>
+                <h2 className='Bikeinformation'>ADD Bike Information</h2>
                 {message && (
                     <div className='message'>
                         {message}

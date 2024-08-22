@@ -10,10 +10,7 @@ export const Option = () => {
             <div id="optionList">
                 <ul>
                     <li><Link to="/myprofile">
-
-
                         <FaUserAlt />  MY Profile!
-
                     </Link>
                     </li>
                     <li>
@@ -28,12 +25,11 @@ export const Option = () => {
                         </Link>
                     </li>
                     <li>
-                    <Link to="/Orderpage">
+                        <Link to="/Orderpage">
                             <FaEye />  OrderPage!
                         </Link>
                     </li>
-                    <li></li>
-                    <li></li>
+
                 </ul>
             </div>
 

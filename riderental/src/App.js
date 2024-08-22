@@ -13,6 +13,7 @@ import { useEffect, useState } from 'react';
 import { Supplier } from './Components/Supplier';
 import { Payment } from './UI/Payment';
 import { Orderpage } from './Components/Pages/Orderpage';
+import { Bookingpage } from './UI/Bookingpage';
 
 
 
@@ -38,7 +39,7 @@ function App() {
           <Route path="/showbike" element={<ShowBike />} />
           <Route path="/Orderpage" element={<Orderpage />} />
           <Route path="/payment" element={<Payment />} />
-       
+          <Route path="/bookingpage" element={<Bookingpage/>}></Route>
         </Routes>
       </div>
     </Router>

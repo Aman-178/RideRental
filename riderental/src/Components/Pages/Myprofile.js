@@ -9,32 +9,32 @@ export const MyProfile = () => {
   const [error, setError] = useState(null);
   const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
-      name: '',
-      shopname: '',
-      address: '',
-      contact: '',
-      email: ''
+    name: '',
+    shopname: '',
+    address: '',
+    contact: '',
+    email: ''
   });
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData({
-        ...formData,
-        [name]: value
+      ...formData,
+      [name]: value
     });
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-        const response = await axios.put("http://localhost:9093/supplier", formData);
-        if (response.status === 200) { 
-            setMessage("Updated Successfully");
-            setVisible(false); 
-        }
+      const response = await axios.put("http://localhost:9093/supplier", formData);
+      if (response.status === 200) { 
+        setMessage("Updated Successfully");
+        setVisible(true); 
+      }
     } catch (error) {
-        setMessage("Internal server error");
-        setVisible(false); 
+      setMessage("Internal server error");
+      setVisible(true); 
     }
   };
 
@@ -55,6 +55,7 @@ export const MyProfile = () => {
         const response = await axios.get(`http://localhost:9093/supplier/${id}`);
         if (response.status === 200) {
           setData(response.data);
+          
         }
       } catch (error) {
         console.error('Error fetching profile data:', error);
@@ -77,7 +78,7 @@ export const MyProfile = () => {
           {data ? (
             <div className="profile-card">
               <img
-                src={data.image}
+                src={data.image || 'default-profile.png'} // Fallback image
                 alt={`${data.name}'s profile`}
                 className="profile-pictures"
               />

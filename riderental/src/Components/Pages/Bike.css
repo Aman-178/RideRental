@@ -1,21 +1,30 @@
 .bike-form-container {
     max-width: 1200px;
     margin: auto;
-    background: #a48c8c;
+    background: #370909d3;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(197, 116, 116, 0.1);
-    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(43, 10, 10, 0.672);
+    overflow-x: hidden;
+    overflow-y: hidden;
 }
 
-h2 {
+.Bikeinformation {
+    position: relative;
+    top: -19px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 2px solid;
     text-align: center;
-    margin-bottom: 20px;
-   
+    width: 100%;
+    left: -3px;
+    border-radius: 10px;
+    background-color: rgb(54, 36, 14);
+    
 }
 
 .bike-form {
     display: flex;
     flex-wrap: wrap;
+    font-size: large;
     gap: 20px; /* Spacing between the form groups */
 }
 

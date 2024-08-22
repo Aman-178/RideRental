@@ -2,21 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { Option } from './Option';
-import { FaArrowAltCircleDown, FaArrowAltCircleUp, FaList, FaCut } from 'react-icons/fa';
+import { FaList, FaCut } from 'react-icons/fa';
 import axios from 'axios';
 
 export const Navbar = () => {
-    const [isHovered, setIsHovered] = useState(false);
-    const [iSHovered, setISHovered] = useState(false);
+    
     const [isClicked, setIsClicked] = useState(false);
     const [requestOrderData, setRequestOrderData] = useState([]);
     const [disabledOrders, setDisabledOrders] = useState(new Set());
 
     // Handlers for mouse events
-    const handleMouseEnter = () => setIsHovered(true);
-    const handleMouseLeave = () => setIsHovered(false);
-    const handleMouseEnterSignUp = () => setISHovered(true);
-    const handleMouseLeaveSignUp = () => setISHovered(false);
+    
     const handleClick = () => setIsClicked(prevState => !prevState);
 
     useEffect(() => {
@@ -90,16 +86,11 @@ export const Navbar = () => {
                     <Link to="/login">
                         <button
                             id='loginbutton'
-                            onMouseEnter={handleMouseEnter}
-                            onMouseLeave={handleMouseLeave}
+                            
                             aria-label="Login button"
                         >
                             Login
-                            {isHovered ? (
-                                <FaArrowAltCircleUp id="icon" />
-                            ) : (
-                                <FaArrowAltCircleDown id="icon" />
-                            )}
+                            
                         </button>
                     </Link>
                 </div>
@@ -107,16 +98,10 @@ export const Navbar = () => {
                     <Link to="/signup">
                         <button
                             id='loginbutton'
-                            onMouseEnter={handleMouseEnterSignUp}
-                            onMouseLeave={handleMouseLeaveSignUp}
+                            
                             aria-label="Signup button"
                         >
-                            Signup
-                            {iSHovered ? (
-                                <FaArrowAltCircleUp id="icon" />
-                            ) : (
-                                <FaArrowAltCircleDown id="icon" />
-                            )}
+                           SIGNUP 
                         </button>
                     </Link>
                 </div>

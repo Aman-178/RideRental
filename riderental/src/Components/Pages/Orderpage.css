@@ -18,10 +18,6 @@
     background-color: rgb(61, 44, 23);
 
 }
-.confirmsOrders{
-    position: relative;
-    bottom: 40px;
-}
 /* Style for the entire table */
 table {
     
@@ -32,14 +28,14 @@ table {
 
 
 th, td {
-    border: 2px solid rgb(242, 233, 233); /* Border for individual cells */
-    padding: 8px; /* Adds padding inside each cell */
-    text-align: left; /* Aligns text to the left within cells */
+    border: 2px solid rgb(242, 233, 233); 
+    padding: 8px; 
+    text-align: left; 
 }
 
-/* Style for table header row */
+
 thead th {
-    background-color: #8b4747; /* Light gray background for header cells */
+    background-color: #8b4747; 
 }
 tbody td{
    color: azure;
