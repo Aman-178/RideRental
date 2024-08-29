@@ -14,6 +14,8 @@
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.26.0",
     "react-scripts": "5.0.1",
+    "toastify-js": "^1.12.0",
+    "tostify": "^0.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

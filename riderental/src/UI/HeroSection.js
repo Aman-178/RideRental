@@ -3,7 +3,8 @@ import './HeroSection.css';
 import { Spinner } from './Spinner';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import { UserContext } from '../Context/UserContext';
+import { useContext } from 'react';
 
 export const HeroSection = () => {
   const [data, setData] = useState([]);
@@ -13,7 +14,8 @@ export const HeroSection = () => {
   const [BookingId, setBookingId] = useState('');
   const [status, setStatus] = useState('')
   const[BookingMessage,setBookingMessage]=useState('')
-
+  const [checkdata,setcheckdata]=useState(false)
+  const { user, updateUser } = useContext(UserContext);
   // Handle increment for specific index
   const handleIncrement = (index) => {
     setQuantities(prevQuantities =>
@@ -52,22 +54,24 @@ export const HeroSection = () => {
 
     fetchData();
   }, []);
-
+   
   const senddata = async (index) => {
     //Sending Requset for Booking.
     const formDataToSend = new FormData();
     formDataToSend.append('orignalprice', data[index].price);
     formDataToSend.append('Days', quantities[index]);
-    const totalprice = data[index].price * quantities[index];
+    const totalprice= data[index].price * quantities[index];
     formDataToSend.append('totalprice', totalprice);
     formDataToSend.append('bikenumber', data[index].bikeNumber);
     formDataToSend.append('bikename', data[index].bikeName);
     formDataToSend.append('supplierid', data[index].supplier.id);
-
+    formDataToSend.append('username',user.fullname);
+    formDataToSend.append('mobomo',user.mobno);
     try {
       const response = await axios.post('http://localhost:9093/bookingdata/userbook', formDataToSend);
       if (response.status === 201) {
         setBookingId(response.data.id);
+        localStorage.setItem('totalprice', totalprice);
         console.log('Data successfully sent:', response.data.id, BookingId);
       } else {
         console.log('Unexpected response status:', response.status);
@@ -141,10 +145,10 @@ export const HeroSection = () => {
     }
   }, [status]);
 
+  if (loading) return <Spinner></Spinner>;
 
+ 
 
-
-  if (loading) return <Spinner></Spinner>
   return (
     <div className='Herocontainer'>
       <div className='available'><h2>{showMessage}</h2></div>

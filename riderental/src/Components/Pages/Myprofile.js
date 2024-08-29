@@ -46,7 +46,7 @@ export const MyProfile = () => {
     const fetchProfileData = async () => {
       const id = localStorage.getItem('supplierId');
       if (!id) {
-        setError('No supplier ID found in local storage.');
+        setError('Please LogIn First..!');
         setLoading(false);
         return;
       }

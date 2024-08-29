@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "rootDir": "src/",
+    "outDir": "dist/",
+
+    "removeComments": true,
+
+    "alwaysStrict": true,
+    "strict": true,
+
+    "target": "ES6",
+    "module": "CommonJS",
+
+    "esModuleInterop": true,
+
+    "sourceMap": true,
+
+    "declaration": true,
+
+    "experimentalDecorators": true
+  },
+
+  "exclude": ["node_modules", "src/**/*.spec.ts", "dist"]
+}

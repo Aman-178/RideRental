@@ -24,7 +24,7 @@ export const Login = () => {
                 // Store supplier ID and/or token in localStorage or sessionStorage
                 localStorage.setItem('supplierId', id);
                 localStorage.setItem('message', message);
-                navigate('/admin');
+                navigate('/supplier');
                console.log(id);
             }
         } catch (error) {

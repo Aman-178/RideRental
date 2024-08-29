@@ -154,3 +154,8 @@
 .book-button:hover {
   background-color: #0056b3;
 }
+.darkmode{
+  height: 100px;
+  width: 100px;
+  background-color: red;
+}

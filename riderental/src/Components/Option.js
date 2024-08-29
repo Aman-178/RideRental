@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 
 export const Option = () => {
-
+ 
     return (
         <div id='option'>
             <div id="optionList">

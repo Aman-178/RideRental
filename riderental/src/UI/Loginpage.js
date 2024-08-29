@@ -16,7 +16,7 @@ export const Loginpage = ({ setAuthinacated }) => {
         email: '',
         mobno: '',
         password: '',
-        cpassword: ''
+        cpassword: '' 
     });
 
     const navigate = useNavigate(); // Initialize useNavigate hook
@@ -60,6 +60,7 @@ export const Loginpage = ({ setAuthinacated }) => {
 
     const handleSubmit1 = async (event) => {
         event.preventDefault();
+        console.log("aman")
         if (formData1.password !== formData1.cpassword) {
             setMessage("Passwords do not match.");
             return;
@@ -68,6 +69,7 @@ export const Loginpage = ({ setAuthinacated }) => {
         try {
             const response = await axios.post('http://localhost:9093/userdata/usersignup', userData);
             if (response.status === 201) {
+                setVisible(true)
                 setMessage("Successfully signed up! Please login.");
             }
         } catch (error) {
@@ -80,6 +82,7 @@ export const Loginpage = ({ setAuthinacated }) => {
             <div className='welcome'>
                 <h1>RIDE-RENTAL</h1>
                 <h3>Welcome Back!</h3>
+                {message && <div className='message'>{message}</div>}
             </div>
             {visible ? (
                 <form className="login-form" onSubmit={handleLogin}>
@@ -111,10 +114,11 @@ export const Loginpage = ({ setAuthinacated }) => {
                         <input type='submit' value='Login' />
                     </div>
                     <p>New User? <button className='signupbotton' type="button" onClick={handleClick}>Sign Up</button></p>
-                    {message && <div className='Loginmessage'>{message}</div>}
+                    
                 </form>
             ) : (
-                <form className="signup-form" onSubmit={handleSubmit1}>
+                
+                <form className='signup-form' onSubmit={handleSubmit1}>
                     <h2 className='usersignup'>Sign Up</h2>
                     <div className="form-group">
                         <label>Full Name:</label>
@@ -172,11 +176,10 @@ export const Loginpage = ({ setAuthinacated }) => {
                         />
                     </div>
                     <div className="form-group">
-                        <input type='submit' value='Sign Up' />
-                        {message && <div className='message'>{message}</div>}
+                        <input type='submit' value='SignUp'></input>        
                     </div>
                     <div className='signupp'>
-                    <p>Already have an account? <button className='loginbutton' type="button" onClick={handleClick}>Login</button></p>
+                        <p>Already have an account? <button className='loginbutton' type="button" onClick={handleClick}>Login</button></p>
                     </div>
                 </form>
             )}
