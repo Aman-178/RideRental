@@ -43,8 +43,8 @@
     
 }
 .submit-button button{
-    height: 30px;
-    width: 100px;
+    height: 40px;
+    width: 200px;
     background-image: linear-gradient(rgb(180, 101, 113),rgb(170, 162, 144));
     border-radius: 7px;
     cursor: pointer;

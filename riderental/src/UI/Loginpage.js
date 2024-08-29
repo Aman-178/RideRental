@@ -82,13 +82,14 @@ export const Loginpage = ({ setAuthinacated }) => {
             <div className='welcome'>
                 <h1>RIDE-RENTAL</h1>
                 <h3>Welcome Back!</h3>
-                {message && <div className='message'>{message}</div>}
+               
             </div>
+          
             {visible ? (
                 <form className="login-form" onSubmit={handleLogin}>
                     <h2 className='userlogin'>Login</h2>
                     <div className="form-group">
-                        <label>Email:</label>
+                        <label className='loginlabel'>Email:</label>
                         <input
                             type='email'
                             placeholder='Enter Email'
@@ -99,7 +100,7 @@ export const Loginpage = ({ setAuthinacated }) => {
                         />
                     </div>
                     <div className="form-group">
-                        <label>Password:</label>
+                        <label className='loginlabel'>Password:</label>
                         <input
                             type='password'
                             placeholder='Enter Password'
@@ -110,6 +111,7 @@ export const Loginpage = ({ setAuthinacated }) => {
 
                         />
                     </div>
+                    {message && <div className='loginmessage'>{message}</div>}
                     <div className="form-group">
                         <input type='submit' value='Login' />
                     </div>
@@ -121,7 +123,7 @@ export const Loginpage = ({ setAuthinacated }) => {
                 <form className='signup-form' onSubmit={handleSubmit1}>
                     <h2 className='usersignup'>Sign Up</h2>
                     <div className="form-group">
-                        <label>Full Name:</label>
+                        <label >Full Name:</label>
                         <input
                             type='text'
                             name='fullname'
@@ -175,14 +177,19 @@ export const Loginpage = ({ setAuthinacated }) => {
                             required
                         />
                     </div>
+                    {message && <div className='loginmessage'>{message}</div>}
                     <div className="form-group">
                         <input type='submit' value='SignUp'></input>        
                     </div>
+                    
                     <div className='signupp'>
-                        <p>Already have an account? <button className='loginbutton' type="button" onClick={handleClick}>Login</button></p>
+                        <p>Already have an account? <button className='loginbutton' type='click' onClick={handleClick}>Login</button></p>
                     </div>
                 </form>
+                
             )}
+            
+           
         </div>
     );
 };

@@ -1,6 +1,6 @@
 .container {
     height: 100vh;
-    background-image: linear-gradient(rgb(68, 47, 47), rgb(51, 48, 48));
+    background-image: linear-gradient(rgb(135, 54, 54), rgb(51, 48, 48));
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,13 +9,13 @@
 
 .welcome{
     position: relative;
-    right: 100px;
+    right: 140px;
     bottom: 90px;
     background-image:linear-gradient(rgb(1, 10, 31));
 }
 .welcome h3{
     position: relative;
-    left: 20px;
+    left: 10px;
     bottom: 20px;
     color: bisque;
 }
@@ -40,12 +40,14 @@
 .form-group input[type='submit'] {
     background-image: linear-gradient(rgb(70, 67, 67), rgb(33, 19, 19));
 }
-
+.loginlabel label{
+    color: bisque;
+}
 .login-form p {
     font-size: larger;
     font-weight: bolder;
     margin-left: 20px;
-    color: rgb(39, 4, 1);
+    color: rgb(154, 15, 2);
 }
 
 .loginbutton  {
@@ -56,7 +58,7 @@
     width: 120px;
     margin-left: 10px;
 }
-.signupbotton{
+ .signupbotton{
     background-color: rgb(80, 46, 5);
     color: rgb(32, 14, 4);
     border: 1px solid orange;
@@ -64,7 +66,7 @@
     width: 120px;
     margin-left: 10px;
 }
-/* .signup-form {
+  .signup-form {
    position: relative;
    bottom: 70px;
    box-shadow: 2px 2px 2px 2px black;
@@ -72,13 +74,20 @@
    padding-left: 10px;
    padding-right: 10px;
    margin-top: 50px;
-   height: 650px;
-}
-.signup-form .form-group{
+   height: 700px;
+} 
+.signup-form h2{
     position: relative;
-    top: 10px;
+    top: 40px;
 }
-.signupp{
+ .signup-form .form-group{
     position: relative;
-    bottom: 50px;
-}  */
+    top: 40px;
+} 
+   
+.loginmessage{
+   position: sticky;
+   color: red;
+   
+
+}

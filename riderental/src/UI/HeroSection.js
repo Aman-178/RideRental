@@ -5,6 +5,8 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../Context/UserContext';
 import { useContext } from 'react';
+import {Geolocation} from './GeoLocation'
+
 
 export const HeroSection = () => {
   const [data, setData] = useState([]);
@@ -152,6 +154,7 @@ export const HeroSection = () => {
   return (
     <div className='Herocontainer'>
       <div className='available'><h2>{showMessage}</h2></div>
+       
       <div className='cart-container'>
         {data.length > 0 && data.map((product, index) => (
           <div className='bike-item' key={product.id}> {/* Assuming each product has a unique id */}
