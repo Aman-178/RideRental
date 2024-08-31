@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from '../Context/UserContext';
 import { useContext } from 'react';
-import {Geolocation} from './GeoLocation'
+import { Geolocation } from './GeoLocation'
 
 
 export const HeroSection = () => {
@@ -15,8 +15,8 @@ export const HeroSection = () => {
   const [loading, setloading] = useState('')
   const [BookingId, setBookingId] = useState('');
   const [status, setStatus] = useState('')
-  const[BookingMessage,setBookingMessage]=useState('')
-  const [checkdata,setcheckdata]=useState(false)
+  const [BookingMessage, setBookingMessage] = useState('')
+  const [checkdata, setcheckdata] = useState(false)
   const { user, updateUser } = useContext(UserContext);
   // Handle increment for specific index
   const handleIncrement = (index) => {
@@ -56,19 +56,20 @@ export const HeroSection = () => {
 
     fetchData();
   }, []);
-   
+
   const senddata = async (index) => {
     //Sending Requset for Booking.
     const formDataToSend = new FormData();
     formDataToSend.append('orignalprice', data[index].price);
     formDataToSend.append('Days', quantities[index]);
-    const totalprice= data[index].price * quantities[index];
+    const totalprice = data[index].price * quantities[index];
     formDataToSend.append('totalprice', totalprice);
     formDataToSend.append('bikenumber', data[index].bikeNumber);
     formDataToSend.append('bikename', data[index].bikeName);
     formDataToSend.append('supplierid', data[index].supplier.id);
-    formDataToSend.append('username',user.fullname);
-    formDataToSend.append('mobomo',user.mobno);
+    formDataToSend.append('username', user.fullname);
+    formDataToSend.append('mobomo', user.mobno);
+    formDataToSend.append('address', localStorage.getItem('address'))
     try {
       const response = await axios.post('http://localhost:9093/bookingdata/userbook', formDataToSend);
       if (response.status === 201) {
@@ -116,7 +117,7 @@ export const HeroSection = () => {
                   if (pollResponse.data !== 'Wait') {
                     clearInterval(intervalId);
                     setloading(false);
-                    
+
                   }
                 }
               } catch (error) {
@@ -142,23 +143,24 @@ export const HeroSection = () => {
       navigate('/payment');
       console.log('Booking accepted');
     } else if (status === 'Decline') {
-       setBookingMessage('This Supplier Not Accepting This Time !')
+      setBookingMessage('This Supplier Not Accepting This Time !')
       console.log('Booking declned');
     }
   }, [status]);
 
   if (loading) return <Spinner></Spinner>;
 
- 
+
 
   return (
     <div className='Herocontainer'>
-      <div className='available'><h2>{showMessage}</h2></div>
-       <Geolocation></Geolocation>
+      <div className='available'><h2>{showMessage}</h2>
+        <div className='geolocation'><Geolocation></Geolocation></div></div>
+
       <div className='cart-container'>
         {data.length > 0 && data.map((product, index) => (
           <div className='bike-item' key={product.id}> {/* Assuming each product has a unique id */}
-        
+
             <h3 className='bike-name'>{product.bikeName}</h3>
             <p className='bike-number'>{product.bikeNumber}</p>
             <p className='supplierAddress'>{product.supplier.address}</p>

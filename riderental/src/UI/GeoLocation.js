@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-
+import './GeoLocation.css'
 export const Geolocation = () => {
     const [location, setLocation] = useState({
         latitude: null,
@@ -26,12 +26,15 @@ export const Geolocation = () => {
 
                     // Send location data to the server
                     try {
-                        const response = await axios.post('http://localhost:9093/userdata/location', {
-                            latitude,
-                            longitude
+                        const response = await axios.get('http://localhost:9093/getLocation', {
+                            params: {
+                                latitude: latitude,
+                                longitude: longitude
+                            }
                         });
                         if (response.status === 200) {
-                            localStorage.setItem('address', response.data.location)
+                            console.log(response.data)
+                            localStorage.setItem('address', response.data)
                         }
                         console.log('Location sent successfully');
                     } catch (error) {
@@ -89,9 +92,11 @@ export const Geolocation = () => {
     return (
         <div>
             {showButton && !isRequested && (
-                <div>
-                    <h1>Please Allow Location!</h1>
-                    <button onClick={requestLocation}>Allow Location</button>
+                <div className='locationallow'>
+                    <p>Please Allow Location!
+                    
+                    </p>
+                    <button  className='locationbutton'onClick={requestLocation}>Allow Location</button>
                 </div>
             )}
 

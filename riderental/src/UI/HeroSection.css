@@ -5,6 +5,7 @@
 }
 .available{
   max-width: 190px;
+  
 }
 .available h2 {
   font-size: xx-large;
@@ -39,7 +40,8 @@
   padding: 10px;
   background-color:transparent; 
   position: relative;
-  bottom: 50px;
+  bottom: 60px;
+  
 }
 .bike-item {
   flex: 1 1 30%; 
@@ -158,4 +160,8 @@
   height: 100px;
   width: 100px;
   background-color: red;
+}
+.geolocation{
+ position: relative;
+  z-index: 1;
 }

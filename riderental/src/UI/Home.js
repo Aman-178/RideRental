@@ -11,9 +11,7 @@ export const Home = () => {
             </div>
              <HeroSection/>
           
-            {/* <div className='userfooter'>
-                <Footer />
-            </div> */}
+            
         </div>
     )
 }

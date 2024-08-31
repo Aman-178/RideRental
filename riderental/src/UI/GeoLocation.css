@@ -1,0 +1,11 @@
+.locationallow{
+    display: flex;
+    
+    position: relative;
+    bottom: 100px;
+    left: 750px;
+}
+.locationbutton{
+    position: relative;
+    bottom: 45px;
+}
