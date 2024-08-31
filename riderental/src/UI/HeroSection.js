@@ -154,7 +154,7 @@ export const HeroSection = () => {
   return (
     <div className='Herocontainer'>
       <div className='available'><h2>{showMessage}</h2></div>
-       
+       <Geolocation></Geolocation>
       <div className='cart-container'>
         {data.length > 0 && data.map((product, index) => (
           <div className='bike-item' key={product.id}> {/* Assuming each product has a unique id */}

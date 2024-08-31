@@ -14,10 +14,11 @@
             mask-composite: intersect;
     animation: l4 1s infinite steps(10);
 }
-h2{
+.spinnerh2{
    position: relative;
-   right: 60px;
+   left: 350px;
    bottom: 25px;
+   color: rgb(176, 123, 55);
 }
 @keyframes l4 {
     to {

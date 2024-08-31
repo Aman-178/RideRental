@@ -6,7 +6,7 @@ export const Spinner = () => {
     <div className='spinner-container'>
       <div className='loader'></div>
       <div className='spinner-message'>
-        <h2>Wait...</h2>
+        <h2 className='spinnerh2'>Wait... 2 min</h2>
       </div>
     </div>
   );
